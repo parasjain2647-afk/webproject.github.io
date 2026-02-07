@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #EAEDED;
+            font-family: Arial, sans-serif;
+
+        }
+        
+        .Navbar{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 10px;
+
+            background-color: #131921;
+            color: white;
+            padding: 1px 10px;
+            height: 60px;
+        }
+
+        .Navbar a{
+            text-decoration: none;
+            color: white;
+        }
+
+        .Logo{
+            max-width: 120px;
+        }
+
+        .Logo:hover{
+            outline: 1px solid white;
+        }
+
+        .classLoc{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 8px;
+            min-width: 165px;
+        }
+
+        .classLoc:hover{
+            outline: 1px solid white;
+        }
+
+        .class{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 8px;
+            max-width: 100px;
+        }
+
+        .class:hover{
+            outline: 1px solid white;
+        }
+        
+        .classLang{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 15px 6px;
+            max-width: 40px;
+        }
+
+        .classLang:hover{
+            outline: 1px solid white;
+        }
+
+        .classCart{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 11px 8px;
+        }
+
+        .classCart:hover{
+            outline: 1px solid white;
+        }
+        
+        .text{
+            display: flex;
+            flex-direction: column;
+            font-size: 12px;
+            line-height: 14px;
+        }
+
+        .small{
+            font-size: 11px;
+            opacity: 1;
+        }
+        
+        .smallLoc{
+            font-size: 11px;
+            opacity: 0.8;
+        }
+        
+        .big{
+            font-size: 14px;
+            font-weight: 700;
+        }   
+        
+        .Search{
+            display: flex;
+            align-items: center;
+            flex: 1;
+            min-width: 510px;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        .Search select{
+            border: none;
+            padding: 13px 1px;
+            background: #e6e6e6;
+            width: 50px;
+        }
+
+        .Search select:hover{
+            opacity: 0.7;
+        }
+
+        .Search_Input{
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+
+        .Search img{
+            background-color: #febd69;
+            padding: 11px 14px;
+            width: 10px;    
+        }
+
+        .Search img:hover{
+            opacity: 0.9;
+        }
+
+
+        .ButtonsBar{
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background-color: #232f3e;
+            height: 25px;
+            padding: 10px 16px;
+            position: relative;
+                z-index: 5;
+        }
+
+        .ButtonsLinks{
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            opacity: 0.9;
+            
+            padding: 10px 8px;
+            cursor: pointer;
+        }
+
+        .ButtonsLinks:hover{
+            outline: 1px solid white;
+        }
+        
+        .Main{
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .All_Products{
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            padding: 0px 12px;
+            max-width: 94%;
+            margin: 0 auto;
+            margin-left: 5px;
+        }
+        
+        .Banner{
+            display: flex; 
+            gap: 0px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            position: relative;
+            z-index: 1;
+            margin-bottom: -300px;
+        }
+
+        .Banner a{
+            flex: 0 0 auto;
+        }
+        
+        .Products{
+            background-color: white;
+            height: 500px;
+            width: 285px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .grid{
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(2, 1fr);
+            margin: 12px 20px;
+            margin-bottom: 50px;
+        }
+        
+        .Headings{
+                font-size: 20px;
+                font-weight: 700;
+                padding: 20px;
+                text-align: left;
+        }
+        
+        .Sliders_Section{
+            max-width: 94%;
+            padding: 20px;
+            background-color: white;
+            margin: 25px auto;
+        }
+        
+        .Sliders{
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .Sliders a{
+            flex: 0 0 auto;
+        }
+
+        .Sponsored{
+            display: flex;
+            align-items: center;
+            background: white;
+            gap: 6px;
+            padding: 20px 20px;
+            max-width: 80%;
+            margin: 20px auto;
+            }
+
+        .Shop{
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #febd69;
+            color: black;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 40px;
+        }
+
+        .New{
+            text-align: center;
+            background-color: white;
+            gap:2px;
+            height:190px;
+        }
+    
+    </style>
+</head>
+<body>
+    <!-- Header -->
+        <nav class="Navbar">
+            <a href="#" class="Logo"><img src="logo.jpeg" alt="" height="50px" ></a>
+
+            <a href="#" class="classLoc">
+                <img src="location.jpeg" alt="" height="18px">
+                <div  class="text">
+                    <span class="smallLoc">Delivering to delhi, 110001</span>
+                    <span class="big">Update location</span>
+                </div>
+            </a> 
+
+            <div class="Search">  
+                <select name="category" id="categoryselect" > 
+                    <option value="All" selected disabled hidden>All</option>
+                    <option value="All Categories"> All Categories </option>
+                    <option value="Alexa Skills"> Alexa Skills </option>
+                    <option value="Amazon Devices"> Amazon Devices </option>
+                    <option value="Amazon Fashion"> Amazon Fashion </option>
+                    <option value="Amazon Fresh"> Amazon Fresh </option>
+                    <option value="Amazon Fresh Meat"> Amazon Fresh Meat </option>
+                    <option value="Amazon Pharmacy"> Amazon Pharmacy </option>
+                    <option value="Appliances"> Appliances </option>
+                    <option value="Apps & Games"> Apps & Games </option>
+                    <option value="Audible Audiobooks"> Audible Audiobooks </option>
+                    <option value="Baby"> Baby </option>
+                    <option value="Beauty"> Beauty </option>
+                    <option value="Books"> Books </option>
+                    <option value="Car & Motorbike"> Car & Motorbike </option>
+                    <option value="Clothing & Accessories"> Clothing & Accessories </option>
+                    <option value="Collectibles"> Collectibles </option>
+                    <option value="Computers & Accessories"> Computers & Accessories </option>
+                    <option value="Deals"> Deals </option>
+                    <option value="Electronics"> Electronics </option>
+                    <option value="Furniture"> Furniture </option>
+                    <option value="Garden & Outdoors"> Garden & Outdoors </option>
+                    <option value="Gift Cards"> Gift Cards </option>
+                    <option value="Grocery & Gourmet Foods"> Grocery & Gourmet Foods </option>
+                    <option value="Health & Personal Care"> Health & Personal Care </option>
+                    <option value="Home & Kitchen"> Home & Kitchen </option>
+                    <option value="Industrial & Scientific"> Industrial & Scientific </option>
+                    <option value="Jewellery"> Jewellery </option>
+                    <option value="Kindle Store"> Kindle Store </option>
+                    <option value="Luggage & Bags"> Luggage & Bags </option>
+                    <option value="Luxury Beauty"> Luxury Beauty </option>
+                    <option value="Movies & TV Shows"> Movies & TV Shows </option>
+                    <option value="MP3 Music"> MP3 Music </option>
+                    <option value="Music"> Music </option>
+                    <option value="Musical Instruments"> Musical Instruments </option>
+                    <option value="Office Products"> Office Products </option>
+                    <option value="Pet Supplies"> Pet Supplies </option>
+                    <option value="Prime Video"> Prime Video </option>
+                    <option value="Shoes & Handbags"> Shoes & Handbags </option>
+                    <option value="Software"> Software </option>
+                    <option value="Sports, Fitness & Outdoors"> Sports, Fitness & Outdoors </option>
+                    <option value="Subscribe & Save"> Subscribe & Save </option>
+                    <option value="Tools & Home Improvement"> Tools & Home Improvement </option>
+                    <option value="Toys & Games"> Toys & Games </option>
+                    <option value="Under ₹500"> Under ₹500 </option>
+                    <option value="Video Games"> Video Games </option>
+                    <option value="Watches"> Watches </option>  
+                </select>    
+                <input type="text" class="Search_Input" placeholder="Search Amazon.in"></input>
+                <img src="Search_Icon.png" alt="" height="20px">
+            </div>
+
+            <a href="#" class="classLang">
+                <img src="flag.png" alt="" width="25px">
+                <span class="small">EN</span>
+            </a>
+
+            <a href="#" class="class">
+            <div class="text">
+                <span class="small">Hello,Sign In </span> 
+                <span class="big">Accounts & Lists</span>
+            </div>
+            </a>
+
+            <a href="#" class="class">
+                <div class="text">
+                    <span class="small">Returns </span> 
+                    <span class="big">& Orders</span>
+                </div>
+            </a>
+
+            <a href="#" class="classCart"> 
+                <img src="cart.jpeg" alt="" height="30px">
+            </a>
+
+        </nav>
+        
+        <!-- Buttons -->
+        <nav class="ButtonsBar">
+            <b>
+            <a href="#" class="ButtonsLinks" value="#">All</a>
+            <a href="#" class="ButtonsLinks" value="#">Fresh</a>
+            <a href="#" class="ButtonsLinks" value="MX Player">MX Player</a>
+            <a href="#" class="ButtonsLinks" value="Sell">Sell</a>
+            <a href="#" class="ButtonsLinks" value="Bestsellers">Bestsellers</a>
+            <a href="#" class="ButtonsLinks" value="Today's Deals">Today's Deals</a>
+            <a href="#" class="ButtonsLinks" value="Mobiles">Mobiles</a>
+            <a href="#" class="ButtonsLinks" value="Customer Service">Customer Service</a>
+            <a href="#" class="ButtonsLinks" value="New Releases">New Releases</a>
+            <a href="#" class="ButtonsLinks" value="Prime">Prime</a>
+            <a href="#" class="ButtonsLinks" value="Amazon Pay">Amazon Pay</a>
+            <a href="#" class="ButtonsLinks" value="Electronics">Electronics</a>
+            <a href="#" class="ButtonsLinks" value="Fashion">Fashion</a>
+            <a href="#" class="ButtonsLinks" value="Home & Kitchen">Kitchen</a>
+            </b>
+        </nav>
+
+    <div class="Main">
+
+        <!-- Banner -->
+    
+        <div class="Banner">
+            <a href="#"><img src="banner5.jpg" alt="" width="1300px"></a>
+            <a href="#"><img src="banner2.jpg" alt="" width="1300px"></a>
+            <a href="#"><img src="banner3.jpg" alt="" width="1300px"></a>
+            <a href="#"><img src="banner4.jpg" alt="" width="1300px"></a>
+            <a href="#"><img src="banner1.jpg" alt="" width="1300px"></a>
+        </div>
+
+       <!-- Products -->
+        <div class="All_Products">
+            <div class="Products"> 
+                <div class="Headings">Bulk order discounts + Up to 18% GST savings</div>
+                <div class="grid">
+                    <a href="#"><img src="prod1_01.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod1_02.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod1_03.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod1_04.jpg" alt="" height="150px" width="112px"></a>
+                </div>
+                <a href="#">Explore More</a>
+            </div>
+            <div class="Products">
+                <div class="Headings">Revamp your home in style</div>
+                <div class="grid">
+                    <a href="#"><img src="prod1_05.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod1_06.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod1_07.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod1_08.jpg" alt="" height="150px" width="112px"></a>
+                </div>
+                <a href="#">Explore More</a>
+            </div>
+            <div class="Products">
+                <div class="Headings">Appliances for your home | Up to 55% off</div>
+                <div class="grid">
+                    <a href="#"><img src="prod1_09.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod1_10.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod1_11.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod1_12.jpg" alt="" height="150px" width="112px"></a>
+                </div>
+                <a href="#">Explore More</a>
+            </div>
+            <div class="Products">
+                <div class="Headings">Starting ₹49 | Deals on home essentials</div>
+                <div class="grid">
+                    <a href="#"><img src="prod1_13.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod1_14.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod1_15.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod1_16.jpg" alt="" height="150px" width="112px"></a>
+                </div>
+                <a href="#">Explore More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sliders     -->
+     <div class="Sliders_Section">
+        <h2><b>Starting ₹70,348|From daily commute to weekend thrills</b></h2>
+        <a href="#">See all offers</a>
+        <div class="Sliders">
+            <a href="#"><img src="slide1_01.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide1_02.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide1_03.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide1_04.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide1_05.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide1_06.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide1_07.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide1_08.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide1_09.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide1_10.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide1_11.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide1_12.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide1_13.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide1_14.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide1_15.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide1_16.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide1_17.jpg" alt="" height="180px"></a>
+        </div>
+     </div>
+
+    <!-- Sliders     -->
+     <div class="Sliders_Section">
+        <h2><b>Up to 60% Off | Smart furniture for every room</b></h2>
+        <a href="#">See all offers</a>
+        <div class="Sliders">
+            <a href="#"><img src="slide2_01.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide2_02.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide2_03.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide2_04.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide2_05.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide2_06.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide2_07.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide2_08.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide2_09.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide2_10.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide2_11.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide2_12.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide2_13.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide2_14.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide2_15.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide2_16.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide2_17.jpg" alt="" height="180px"></a>
+        </div>
+     </div>
+
+    <!-- Products -->
+     <div class="All_Products">
+            <div class="Products">
+                <div class="Headings">Starting ₹199 | Amazon Brands & more</div>
+                <div class="grid">
+                    <a href="#"><img src="prod2_01.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod2_02.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod2_03.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod2_04.jpg" alt="" height="150px" width="112px"></a>
+                </div> 
+                <a href="#">Explore More</a>   
+            </div>
+            <div class="Products">
+                <div class="Headings">Automotive essentials | Up to 60% off</div>
+                <div class="grid">
+                    <a href="#"><img src="prod2_05.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod2_06.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod2_07.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod2_08.jpg" alt="" height="150px" width="112px"></a>
+                </div>
+                <a href="#">Explore More</a>
+            </div>
+            <div class="Products">
+                <div class="Headings">Best Sellers in Clothing & Accessories</div>
+                <div class="grid">
+                    <a href="#"><img src="prod2_09.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod2_10.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod2_11.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod2_12.jpg" alt="" height="150px" width="112px"></a>
+                </div>
+                <a href="#">Explore More</a>
+            </div>
+            <div class="Products">
+                <div class="Headings">Customers’ Most-Loved Fashion for you</div>
+                <div class="grid">
+                    <a href="#"><img src="prod2_13.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod2_14.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod2_15.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod2_16.jpg" alt="" height="150px" width="112px"></a>
+                </div>
+                <a href="#">Explore More</a>
+            </div>
+     </div>
+
+    <!-- Sliders     -->
+     <div class="Sliders_Section">
+        <h2><b>Under ₹849 | Upgrade your home with products from Small Businesses</b></h2>
+        <a href="#">See all offers</a>
+        <div class="Sliders">
+            <a href="#"><img src="slide3_01.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide3_02.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide3_03.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide3_04.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide3_05.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide3_06.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide3_07.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide3_08.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide3_09.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide3_10.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide3_11.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide3_12.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide3_13.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide3_14.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide3_15.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide3_16.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide3_17.jpg" alt="" height="180px"></a>
+        </div>
+     </div>
+
+     <!-- Sliders     -->
+     <div class="Sliders_Section">
+        <h2><b>Up to 60% off | Cookware, kitchen tool & more | Amazon Launchpad</b></h2>
+        <a href="#">See all offers</a>
+        <div class="Sliders">
+            <a href="#"><img src="slide4_01.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide4_02.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide4_03.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide4_04.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide4_05.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide4_06.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide4_07.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide4_08.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide4_09.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide4_10.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide4_11.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide4_12.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide4_13.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide4_14.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide4_15.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide4_16.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide4_17.jpg" alt="" height="180px"></a>
+        </div>
+     </div>
+
+     <!-- Products -->
+     <div class="All_Products">
+            <div class="Products"> 
+                <div class="Headings">Trending products from Emerging Brands</div>
+                <div class="grid">
+                    <a href="#"><img src="prod3_01.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod3_02.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod3_03.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod3_04.jpg" alt="" height="150px" width="112px"></a>
+                </div>
+                <a href="#">Explore More</a>
+            </div>
+            <div class="Products">
+                <div class="Headings">Bring joy home with every toy</div>
+                <div class="grid">
+                    <a href="#"><img src="prod3_05.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod3_06.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod3_07.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod3_08.jpg" alt="" height="150px" width="112px"></a>
+                </div>
+                <a href="#">Explore More</a>
+            </div>
+            <div class="Products">
+                <div class="Headings">Budget buys from Emerging brands</div>
+                <div class="grid">
+                    <a href="#"><img src="prod3_09.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod3_10.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod3_11.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod3_12.jpg" alt="" height="150px" width="112px"></a>
+                </div>
+                <a href="#">Explore More</a>
+            </div>
+            <div class="Products">
+                <div class="Headings">Smart storage, clutter-free living</div>
+                <div class="grid">
+                    <a href="#"><img src="prod3_13.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod3_14.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod3_15.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod3_16.jpg" alt="" height="150px" width="112px"></a>
+                </div>
+                <a href="#">Explore More</a>
+            </div>
+     </div>
+
+     <!-- Sliders     -->
+     <div class="Sliders_Section">
+        <h2><b>Min.30% off | Trending & must-haves | Small Businesses</b></h2>
+        <a href="#">See all offers</a>
+        <div class="Sliders">
+            <a href="#"><img src="slide5_01.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide5_02.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide5_03.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide5_04.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide5_05.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide5_06.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide5_07.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide5_08.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide5_09.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide5_10.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide5_11.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide5_12.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide5_13.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide5_14.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide5_15.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide5_16.jpg" alt="" height="180px"></a>
+            <a href="#"><img src="slide5_17.jpg" alt="" height="180px"></a>
+        </div>
+     </div>
+
+    <!-- Products -->
+     <div class="All_Products">
+            <div class="Products"> 
+                <div class="Headings">Latest collections from India</div>
+                <div class="grid">
+                    <a href="#"><img src="prod4_01.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod4_02.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod4_03.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod4_04.jpg" alt="" height="150px" width="112px"></a>
+                </div>
+                <a href="#">Explore More</a>
+            </div>
+            <div class="Products">
+                <div class="Headings">Budget-friendly home essentials</div>
+                <div class="grid">
+                    <a href="#"><img src="prod4_05.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod4_06.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod4_07.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod4_08.jpg" alt="" height="150px" width="112px"></a>
+                </div>
+                <a href="#">Explore More</a>
+            </div>
+            <div class="Products">
+                <div class="Headings">Flowers for your valentine</div>
+                <div class="grid">
+                    <a href="#"><img src="prod4_09.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod4_10.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod4_11.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod4_12.jpg" alt="" height="150px" width="112px"></a>
+                </div>
+                <a href="#">Explore More</a>
+            </div>
+            <div class="Products">
+                <div class="Headings">Inspired by your browsing history</div>
+                <div class="grid">
+                    <a href="#"><img src="prod4_13.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod4_14.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod4_15.jpg" alt="" height="150px" width="112px"></a>
+                    <a href="#"><img src="prod4_16.jpg" alt="" height="150px" width="112px"></a>
+                </div>
+                <a href="#">Explore More</a>
+            </div>
+     </div>
+
+     <!-- Sponsored -->
+      <div class="Sponsored">
+        <div>
+            <img src="Spons1.jpg" alt="" height="200px">
+        </div>
+        <div>
+            <img src="Spons2.jpeg" alt="" height="200px">
+        </div>
+        <div class="heading">
+        <a href="#"><h2>U.S. Polo ASSN. Women Lace Up Sneaker Shoes</h2></a><br>
+        <h2><b>₹2,966.00</b></h2><strike>₹4,299.00</strike><br>
+        <a class="Shop" href="#">Shop Now</a>
+        </div>
+      </div>
+
+    <!-- New Customer -->
+     <div class="New">
+         <div style="padding: 20px 0;">
+             <div style="padding: 10px 0;">
+                <hr>
+            </div>
+             <div class="NewText">
+                <h2><b>See Personalised Recommandations</b></h2><br>
+                <a class="Shop" href="#">Sign In</a><br>
+                <h6 style="font-size: 10px;"> <br>
+                New Customers? <a href="#"><u>Start here.</u></a>
+                </h6>
+            </div>
+            <div style="padding: 10px 0;">
+                <hr>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
